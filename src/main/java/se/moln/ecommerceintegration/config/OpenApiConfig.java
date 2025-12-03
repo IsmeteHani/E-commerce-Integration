@@ -39,8 +39,12 @@ public class OpenApiConfig {
                         .addSecuritySchemes("bearerAuth", securityScheme)
                         .addSecuritySchemes("apiKeyAuth", apiKeyScheme))
                 .servers(List.of(
-                        new Server().url("https://userservice.drillbi.se").description("Production Server"),
-                        new Server().url("http://localhost:8080/").description("Production Server")
+                        new Server()
+                                .url("https://user-service-ismete-bfc4argwhceae2hv.northeurope-01.azurewebsites.net")
+                                .description("Azure Production Server"),
+                        new Server()
+                                .url("http://localhost:8080")
+                                .description("Local Development Server")
                 ));
     }
 }
